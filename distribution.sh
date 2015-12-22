@@ -1,2 +1,1 @@
-curl -s http://richlist.btsgame.org/$1.json | ./asset-holders.js | while read p; do printf "$p:123\n"; done | ./dividends.js --profit $2 | awk -v from="$1" -F":" '{print "transfer "from" "$1" "$2 " CNY 0 true"}'
-
+balances=`curl -s http://richlist.btsgame.org/botfund.json | ./asset-holders.js | while read p; do balance=$(./get-balance.js $p); printf "$p:$balance\n"; done`; sum=`printf "$balances" | awk -F":" -v s="$1" '{s+=$2} END {print s}'`; printf "$balances" | awk -v CONVFMT=%.2f -v profit="$2" -v sum="$sum" -F":" '{print "transfer btsjohn "$1" "$2/sum*profit " CNY 0 true"}'

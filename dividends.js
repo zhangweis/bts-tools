@@ -6,7 +6,9 @@
 //expected output:
 //account1:50
 //account2:70
-var argv = require('minimist')(process.argv.slice(2));
+var argv = require('minimist')(process.argv.slice(2), {
+	extra: 0
+});
 var readline = require('readline');
 var rl = readline.createInterface({
   input: process.stdin,
@@ -22,9 +24,9 @@ rl.on('line', function(line){
 rl.on('close',function(){
 	var sum = distributions.reduce(function(total, b){
 		return total+b.holding;
-	}, 0);
+	}, argv.extra);
 	distributions.forEach(function(d){
-		console.log(d.account+':'+(d.holding/sum)*argv.profit);
+		console.log(d.account+':'+((d.holding/sum)*argv.profit).toFixed(2));
 	});
 });
 
