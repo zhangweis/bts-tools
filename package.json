@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/zhangweis/bts-tools",
   "dependencies": {
-    "lodash": "^3.10.1"
+    "lodash": "^3.10.1",
+    "minimist": "^1.2.0"
   }
 }
