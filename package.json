@@ -17,7 +17,10 @@
   },
   "homepage": "https://github.com/zhangweis/bts-tools",
   "dependencies": {
-    "lodash": "^3.10.1",
+    "co": "^4.6.0",
+    "es6-promisify": "^3.0.0",
+    "graphene": "git+https://github.com/spartako82/node-graphene.git",
+    "lodash": "^4.5.0",
     "minimist": "^1.2.0",
     "ws": "^0.8.1"
   }
