@@ -17,7 +17,7 @@ co(function*(){
 	var balances = yield send(0, "get_named_account_balances", [process.argv[2], [process.argv[3]]]);
 	var balance = balances[0].amount;
 	var orders = yield send(0, "get_limit_orders", [process.argv[4], process.argv[3], 1000]);
-	var sells = lodash.filter(orders, {seller:account.id});
+	var sells = lodash.filter(orders, {seller:account.id, sell_price:{base:{asset_id:process.argv[3]}}});
 	var amountOnSale = lodash.sumBy(sells, 'for_sale');
 	console.log((balance+amountOnSale)/precision);
 	process.exit();
