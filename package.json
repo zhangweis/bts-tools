@@ -20,6 +20,7 @@
     "co": "^4.6.0",
     "es6-promisify": "^3.0.0",
     "graphene": "git+https://github.com/spartako82/node-graphene.git",
+    "htmldom": "^0.1.22",
     "lodash": "^4.5.0",
     "minimist": "^1.2.0",
     "ws": "^0.8.1"
