@@ -2,7 +2,10 @@
 'use strict';
 var graphene = require('graphene');
 var lodash = require('lodash');
-var ws = ('wss://bitshares.dacplay.org/ws');
+var ws = 'wss://bitshares.dacplay.org/ws'
+//var ws = 'wss://bit.btsabc.org/ws';//('wss://bitshares.dacplay.org/ws');
+
+//ws = 'ws://120.27.4.72:8090';
 var promisify = require("es6-promisify");
 var co = require('co'); 
 co(function*(){
